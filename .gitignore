@@ -1,0 +1,17 @@
+## Build
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+## IDEs
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+## Logs da aplicação e resultados de testes
+logs/
+*.log
+TestResults/
