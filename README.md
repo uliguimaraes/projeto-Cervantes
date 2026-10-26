@@ -40,13 +40,7 @@ Também dá para criar o banco `veiculos` e executar `database/01-criacao.sql` p
 
 ### 3. Configurar a conexão
 
-Sem configuração, a aplicação usa:
-
-```text
-Host=localhost;Port=5432;Database=veiculos;Username=postgres;Password=postgres
-```
-
-Para usar outra conexão (e não deixar senha no código), defina a variável de ambiente `VEICULOS_CONNECTION`. Exemplo no PowerShell:
+A aplicação lê a conexão da variável de ambiente `VEICULOS_CONNECTION` (nenhuma senha fica no código). Sem ela, o programa avisa e não abre. Exemplo no PowerShell:
 
 ```powershell
 $env:VEICULOS_CONNECTION = "Host=localhost;Port=5432;Database=veiculos;Username=postgres;Password=SUA_SENHA"

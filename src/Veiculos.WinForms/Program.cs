@@ -23,8 +23,12 @@ internal static class Program
 
         try
         {
-            var connection = Environment.GetEnvironmentVariable("VEICULOS_CONNECTION")
-                ?? "Host=localhost;Port=5432;Database=veiculos;Username=postgres;Password=postgres";
+            var connection = Environment.GetEnvironmentVariable("VEICULOS_CONNECTION");
+            if (string.IsNullOrWhiteSpace(connection))
+            {
+                MessageBox.Show("A conexão com o banco não está configurada. Defina a variável de ambiente VEICULOS_CONNECTION (veja o README).", "Configuração necessária", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             var factory = new PostgresConnectionFactory(connection);
 
             var marcas = new MarcaService(new PostgresMarcaRepository(factory));

@@ -18,7 +18,7 @@ public sealed class MainForm : Form
     private readonly ComboBox tipo = new() { DropDownStyle = ComboBoxStyle.DropDownList, Width = 110 };
     private readonly TextBox placa = new() { MaxLength = VeiculoService.TamanhoMaximoPlaca, CharacterCasing = CharacterCasing.Upper };
     private readonly TextBox modelo = new() { MaxLength = VeiculoService.TamanhoMaximoModelo };
-    private readonly NumericUpDown ano = new() { Minimum = 1900, Maximum = 2100, Value = DateTime.Now.Year };
+    private readonly NumericUpDown ano = new() { Minimum = 1950, Maximum = DateTime.Now.Year, Value = DateTime.Now.Year };
     private readonly ComboBox marca = new() { DropDownStyle = ComboBoxStyle.DropDownList };
     private readonly Label rotuloDetalhe = new() { AutoSize = true, Margin = new Padding(3, 8, 3, 3) };
     private readonly NumericUpDown detalhe = new() { Minimum = 1, Maximum = 6, Value = 4 };
