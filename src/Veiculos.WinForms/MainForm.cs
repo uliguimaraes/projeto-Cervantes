@@ -123,7 +123,7 @@ public sealed class MainForm : Form
         try
         {
             marcasCarregadas = listaMarcas;
-            marca.DataSource = listaMarcas;
+            marca.DataSource = listaMarcas.ToList();
             marca.DisplayMember = nameof(Marca.Nome);
             marca.SelectedIndex = -1;
 
